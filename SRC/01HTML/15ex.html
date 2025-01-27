@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <style>
+    /* body {
+      margin: 0;
+      padding: 0;
+    } */
+
+    *{
+      font-size: .8rem;
+    }
+    form {
+      width: 500px;
+      margin: 50px auto;
+      padding: 10px;
+    }
+
+    /* form>.header {
+      color: #09aa5c;
+    } */
+
+    form>.sub {
+      text-align: right;
+      font-size: .8rem;
+      color: gray;
+    }
+
+    /* form>.btn>button {
+      border: 1px solid #09aa5c;
+      background: #09aa5c;
+      border-radius: 6px;
+      width: 100%;
+      padding: 15px;
+      margin-top: 50px;
+      font-size: 18px;
+      font-weight: 1000;
+      line-height: 10px;
+      color: white;
+    } */
+  </style>
+</head>
+
+<body>
+
+  <form action="test.jsp" method="get">
+    <div class="header">
+      <h2 style="color: #09aa5c; font-size: 2rem; font-weight: 1000;">NAVER</h2>
+    </div>
+    <br />
+    <div class="sub">
+      실명 인증된 아이디로 가입
+      <input type="checkbox">
+    </div>
+
+    <div class="input-group">
+      <input type="text" class="form-control form-control-lg" placeholder="아이디">
+      <span class="input-group-text" style="background-color: white; font-size: 0.8rem; color: gray;">@naver.com</span>
+    </div>
+    <div class="">
+      <input type="password" class="form-control form-control-lg" placeholder="비밀번호">
+    </div>
+    <div class="">
+      <input type="text" class="form-control form-control-lg" placeholder="[선택] 이메일주소 (비밀번호 찾기 등 본인 확인용)">
+    </div>
+    <br />
+    <div class="">
+      <div class="">
+        <input type="text" class="form-control form-control-lg" placeholder="이름">
+      </div>
+      <div class="">
+        <input type="text" class="form-control form-control-lg" placeholder="생년월일 8자리">
+      </div>
+      <div class="btn-group form-control form-control-lg">
+        <input type="radio" class="btn-check" id="btnradio1" name="btn">
+        <label class="btn btn-outline-secondary" for="btnradio1">남자</label>
+
+        <input type="radio" class="btn-check" id="btnradio2" name="btn">
+        <label class="btn btn-outline-secondary" for="btnradio2">여자</label>
+
+        <input type="radio" class="btn-check" id="btnradio3" name="btn">
+        <label class="btn btn-outline-secondary" for="btnradio3">선택안함</label>
+      </div>
+      <div>
+        <select class="form-select form-select-lg">
+          <option>대한민국 +82</option>
+        </select>
+      </div>
+      <div class="">
+        <input type="text" class="form-control form-control-lg" placeholder="휴대전화번호">
+      </div>
+    </div>
+    <!-- <div class="btn">
+      <button>인증요청</button>
+    </div> -->
+    <div>
+      <a class="btn btn-outline-secondary" href="javascript:void(0)" style="background-color: #09aa5c; 
+      color: white; font-size: 18px; font-weight: 1000; line-height: 10px;width: 100%;
+      margin-top: 50px; padding: 20px;">인증요청</a>
+    </div>
+  </form>
+</body>
+
+</html>
