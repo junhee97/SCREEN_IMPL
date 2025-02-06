@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body {
+      margin-top: 100px;
+    }
+
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    div {
+      margin: 0 auto;
+      width: 400px;
+      height: 40px;
+      background-color: aquamarine;
+      color: white;
+      text-align: center;
+      line-height: 40px;
+      border: 1px solid black;
+    }
+
+    div:nth-child(1) {
+      position: relative;
+      animation-name: moving1;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    div:nth-child(2) {
+      position: relative;
+      animation-name: moving2;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    div:nth-child(3) {
+      position: relative;
+      animation-name: moving3;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    @keyframes moving1 {
+      from {
+        top: 100vw;
+      }
+
+      to {
+        top: 0;
+      }
+    }
+
+    @keyframes moving2 {
+      from {
+        left: 100vw;
+      }
+
+      to {
+        left: 0;
+      }
+    }
+
+    @keyframes moving3 {
+      from {
+        top:50vw;
+        left: 100vw;
+      }
+
+      to {
+        top:0;
+        left:0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div>HELLOWORLD</div>
+  <div>HELLOWORLD</div>
+  <div>HELLOWORLD</div>
+
+</body>
+
+</html>
