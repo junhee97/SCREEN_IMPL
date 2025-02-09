@@ -35,19 +35,21 @@
     .wrapper>header>.top-header {
       font-size: 1.5rem;
       font-weight: 600;
-      height: 75px;
-      line-height: 75px;
+      height: 80px;
+      line-height: 80px;
       padding: 0 15px;
     }
 
     .wrapper>header>nav {
-      height: 75px;
-      background-color: black;
-      color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      background-color: black;
+      color: white;
       padding: 0 15px;
+      flex-wrap: wrap;
+      height: 100%;
+      min-height: 80px;
     }
 
     .wrapper>header>nav>.nav-logo {
@@ -59,8 +61,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 20px;
-      font-size: 1rem;
+    }
+
+    .wrapper>header>nav>.nav-menu>li {
+      padding: 0 20px;
     }
 
     /* main  */
@@ -79,12 +83,16 @@
       justify-content: left;
       align-items: center;
       gap: 30px;
+
+      flex-wrap: wrap;
     }
 
     .wrapper>main>section:nth-child(1)>.card-container>.card {
       border: 1px solid;
       border-radius: 10px;
       padding: 20px;
+      flex-shrink: 0;
+      flex-basis: 480px;
     }
 
     .wrapper>main>section:nth-child(2) {}
@@ -119,7 +127,7 @@
     /* footer */
     .wrapper>footer {}
 
-    .wraaper>footer>h2 {
+    .wrapper>footer>h2 {
       padding: 0 20px;
     }
 
@@ -146,6 +154,29 @@
 
     .wrapper>footer>.footer-section-block>.footer-section>p {
       margin-top: 0;
+    }
+
+    @media (max-width : 1080px) {
+      .wrapper>header>nav {
+        flex-direction: column;
+      }
+
+      .wrapper>header>nav>.nav-logo {}
+
+      .wrapper>header>nav>.nav-menu {
+        flex-direction: column;
+      }
+
+      .wrapper>header>nav>.nav-menu>li {
+        min-height: 80px;
+        line-height: 80px;
+        font-size: 1.2rem;
+      }
+
+      .wrapper>main>section:nth-child(1)>.card-container>.card {
+        flex-shrink: 0;
+        flex-basis: 100%;
+      }
     }
   </style>
 </head>
