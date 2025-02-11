@@ -138,14 +138,17 @@
     //연봉이(salary) 6000이상이면서 근속연수(years)가 7년이상인 직원만 필터링해서 배열로 저장 확인
     const filtered_emp = employees.filter((item) => { return item.salary >= 6000 && item.years >= 7 });
     console.log(filtered_emp);
+
     //모든 직원의 연봉(salary) 기준으로 내림차순 정렬한 배열 새로 만들기
     const sorted_emp = employees.sort((a, b) => { return b.salary - a.salary });
     console.log(sorted_emp);
+
     //모든 직원의 연봉(salary) 에 근속연수*100 만큼의 보너스를 추가하여 total_salary필드를 추가한 배열을 반환
     const mapped_emp = employees.map((item) => {
       return { ...item, 'total_salary': item.salary + (item.years * 100) }
     });
     console.log(mapped_emp);
+
     //department(부서) 별로 직원들의 연봉총합을 구하세요
     const dep_개발 = employees.filter((item) => { return item.department == '개발' }).reduce((sum, item) => sum + item.salary, 0);;
     console.log("개발부서의 연봉총합 : ", dep_개발);
@@ -164,6 +167,7 @@
       return sum;
     }, {});
     console.log(dep);
+
     //연봉(salary)가 가장높은 직원을 찾아 객체하나만 반환(문서에서 find를 찾아보세요 - !)
     const found = employees.sort((a, b) => { b.salary - a.salary })[0];
     console.log(found);
