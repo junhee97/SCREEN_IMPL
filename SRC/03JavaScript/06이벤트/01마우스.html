@@ -189,7 +189,7 @@
         const previewEl = document.querySelector('.preview');
         const newImgEl = document.createElement('img');
         newImgEl.src = URL.createObjectURL(file);
-        newImgEl.setAttribute('style', 'width:100%,height:100%,object-fit:contain;border:1px solid;padding:2px');
+        newImgEl.setAttribute('style', 'width:100%;height:100%;object-fit:contain;border:1px solid;padding:2px;');
         previewEl.prepend(newImgEl);
       }
     });
