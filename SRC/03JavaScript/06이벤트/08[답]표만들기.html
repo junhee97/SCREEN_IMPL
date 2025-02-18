@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    td {
+      width: 50px;
+      height: 50px;
+      border: 1px solid gray;
+    }
+
+    input {
+      width: 90%;
+      height: 100%;
+      outline: none;
+      border: 0px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <input id="rownum" placeholder="행의개수입력" style="width:200px;">
+  <input id="colnum" placeholder="열의개수입력" style="width:200px;">
+  <button onclick="makemap()">생성</button>
+
+  <hr>
+  <table id="tbl">
+    <tbody>
+
+    </tbody>
+  </table>
+
+
+  <script>
+    
+    // State
+    let curX = 0;
+    let curY = 0;
+    let selectedNode=null;
+
+    // 
+    const selectedStyle = (xPos, yPos) => {
+      if(selectedNode){
+        // 이전에 선택된 노드가 있는 경우
+        deSelectedStyle(selectedNode);
+      }
+        // 이전에 선택된 노드가 있는 경우
+        selectedNode = document.getElementById(`${xPos}|${yPos}`);
+        selectedNode.style.backgroundColor = 'crimson';
+      }
+      const deSelectedStyle = (node)=>{
+        node.style.backgroundColor='white';
+    };
+
+    function makemap() {
+      const row = document.querySelector('#rownum').value;
+      const col = document.querySelector('#colnum').value;
+      const tbody = document.querySelector('#tbl tbody');
+      // let num = 1;
+      tbody.innerHTML = '';
+      for (i = 0; i < row; i++) {
+        const tr = document.createElement('tr');
+        for (j = 0; j < col; j++) {
+          const td = document.createElement('td');
+
+          td.addEventListener('click', (e) => {
+            console.log('클릭node', td);
+            const id = td.getAttribute('id');
+            const xPos = id.split('|')[0];
+            const yPos = id.split('|')[1];
+            selectedStyle(xPos,yPos);
+          });
+          td.innerHTML = `(${i},${j})`;
+          const input = document.createElement('input');
+          // input.value = num++;
+          td.setAttribute('id', `${i}|${j}`);
+          tr.appendChild(td);
+          // td.appendChild(input);
+        };
+        tbody.appendChild(tr);
+      };
+
+      // 기본 cur 위치
+      curX = Math.ceil((col / 2) - 1);
+      curY = Math.ceil((row / 2) - 1);
+      // 초기 선택된 위치 스타일링
+      selectedStyle(curX, curY);
+    };
+
+  </script>
+
+</body>
+
+</html>

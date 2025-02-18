@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    td {
+      width: 50px;
+      height: 50px;
+      border: 1px solid gray;
+    }
+
+    input {
+      width: 90%;
+      height: 100%;
+      outline: none;
+      border: 0px;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <input id="rownum" placeholder="행의개수입력" style="width:200px;">
+  <input id="colnum" placeholder="열의개수입력" style="width:200px;">
+  <button onclick="makemap()">생성</button>
+
+  <hr>
+  <table id="tbl">
+    <tbody>
+
+    </tbody>
+  </table>
+
+
+  <script>
+
+    function makemap() {
+      let row = document.querySelector('#rownum').value;
+      let col = document.querySelector('#colnum').value;
+      let tbody = document.querySelector('#tbl tbody');
+      let num = 1;
+      tbody.innerHTML='';
+      for (i = 0; i < row; i++) {
+        let tr = document.createElement('tr');
+        for (j = 0; j < col; j++) {
+          let td = document.createElement('td');
+          const input = document.createElement('input');
+          input.value = num++;
+          tr.appendChild(td);
+          td.appendChild(input);
+        };
+        tbody.appendChild(tr);
+      };
+    };
+
+    addEventListener('click',()=>{});
+    
+  </script>
+
+</body>
+
+</html>
