@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <div style="width: 800px;height: 500px;border: 1px solid;">
+    <canvas id="myChart"></canvas>
+  </div>
+
+
+  <script>
+
+    const ctx = document.getElementById('myChart');
+
+    let data = {
+      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      datasets: [
+        //   {
+        //   label: 'TEST_LABEL',
+        //   data: [12, 19, 3, 5, 4, 7],
+        //   borderWidth: 1,
+        //   backgroundColor: ['red', 'blue', 'yellow', 'green', 'purple', 'orange'],
+        //   borderColor: ['red', 'blue', 'yellow', 'green', 'purple', 'orange']
+        // },
+        {
+          label: 'RED',
+          data: [12, 0, 0, 0, 0, 0],
+          borderWidth: 1,
+          backgroundColor: 'red',
+          borderColor: 'black',
+        },
+        {
+          label: 'BLUE',
+          data: [0, 33, 0, 0, 0, 0],
+          borderWidth: 1,
+          backgroundColor: 'blue',
+          borderColor: 'black',
+        },
+        {
+          label: 'YELLOW',
+          data: [0, 0, 7, 0, 0, 0],
+          borderWidth: 1,
+          backgroundColor: 'yellow',
+          borderColor: 'black',
+        },
+        {
+          label: 'GREEN',
+          data: [0, 0, 0, 20, 0, 0],
+          borderWidth: 1,
+          backgroundColor: 'green',
+          borderColor: 'black',
+        },
+        {
+          label: 'PURPLE',
+          data: [0, 0, 0, 0, 28, 0],
+          borderWidth: 1,
+          backgroundColor: 'purple',
+          borderColor: 'black',
+        },
+        {
+          label: 'ORANGE',
+          data: [0, 0, 0, 0, 0, 18],
+          borderWidth: 1,
+          backgroundColor: 'orange',
+          borderColor: 'black',
+        }
+      ]
+    };
+    let options = {
+      animations: {
+        // line 차트에만 적용
+        // tension: {
+        //   duration: 1000,
+        //   easing: 'linear',
+        //   from: 1,
+        //   to: 0,
+        //   loop: true
+        // }
+        // bar 차트에만 적용
+        y: {
+          duration: 1000,
+          easing: 'linear',
+          // loop: true,
+        }
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          // max: 100,
+          // min: 0,
+          // ticks: {
+          //   stepSize: 10
+          // }
+        },
+        x: {
+          stacked: true,
+          barPercentage: 1.0,
+          categoryPercentage: 1.0
+        }
+      },
+      onClick : (event,chartEl)=>{
+        console.log('clicked..', chartEl)
+      }
+    };
+
+    new Chart(ctx, {
+      type: 'bar',  // bar, line, pie, doughnut, // bubble, scatter,heatmap
+      data: data,
+      options: options
+    });
+
+  </script>
+
+</body>
+
+</html>
